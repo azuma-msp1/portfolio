@@ -1,0 +1,615 @@
+/* デフォルト設定 */
+html, body{
+	background-color:rgb(230, 230, 230);
+	color:black;
+	font-family: 'Shippori Mincho', serif;
+	margin: 0px;
+	font-size: 18px;
+	text-align: center;
+	line-height: 1.5;
+}
+
+img{
+	width: 100%;
+	height: auto;
+}
+
+h2{
+	font-size: 40px;
+	font-weight: bold;
+	font-family: 'Rationale', sans-serif;
+	margin-bottom: 20px;
+	/* padding-bottom: 40px; */
+}
+
+h3{
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+span{
+	font-size: 60%;
+	color: rgb(120, 120, 220);
+	font-family: 'Shippori Mincho', serif;
+}
+
+section{
+	margin-top: 100px;
+}
+
+/*========= LoadingのためのCSS ===============*/
+
+/* Loading背景画面設定　*/
+#splash {
+    /*fixedで全面に固定*/
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	text-align:center;
+	color:#fff;
+}
+
+/* Loading画像中央配置　*/
+#splash_text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    z-index: 999;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	width: 100%;
+}
+
+/*割れる画面のアニメーション*/
+.loader_cover {
+    width: 100%;
+    height: 50%;
+    background-color: #333;
+    transition: all .2s cubic-bezier(.04, .435, .315, .9);
+    transform: scaleY(1);
+}
+/*上の画面*/
+.loader_cover-up {
+    transform-origin: center top;
+}
+
+/*下の画面*/
+.loader_cover-down {
+    position: absolute;
+    bottom: 0;
+    transform-origin: center bottom;
+}
+/*クラス名がついたらY軸方向に0*/
+.coveranime {
+    transform: scaleY(0);
+}
+
+/* --------------------------- */
+/*           ヘッダー           */
+/* --------------------------- */
+header{
+	background-image: url(../img/top_img01.jpg);
+	background-size: cover;
+	background-position:center;
+	height: 800px;
+}
+
+.header-black{
+	height: 150px;
+	background-color: #000;
+	background: linear-gradient(black,white opacity 0.5);
+	opacity: 0.5;
+}
+
+h1{
+	font-size: 48px;
+	font-weight: bold;
+	font-family: 'Rationale', sans-serif;
+	color: #fff;
+	position: absolute;top: 20px;left: 50%;
+	transform: translateX(-50%);
+}
+
+.sp-nav-btn{
+	margin-left: auto;
+	margin-right: 40px;
+	font-size: 48px;
+	display: none;
+}
+
+.nav-item{
+	position: relative;
+	font-family: 'Rationale', sans-serif;
+	color: #fff;
+}
+
+.nav-item:hover{
+	color: rgb(120, 120, 220);
+}
+
+.nav-item::after{
+	content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    top: 110%;
+    left: 0;
+    /*線の形状*/
+    width: 100%;
+    height: 2px;
+    background:rgb(120, 120, 220);
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: left top;/*左上基点*/
+}
+
+.nav-item:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+	/* レスポンシブ[PC] */
+	@media screen and (min-width:768px) {
+		.nav-list{
+			display: flex;
+			justify-content: center;
+			position: absolute;top: 100px;left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.nav-item:nth-child(n+2){
+			margin-left: 40px;
+		}
+	}
+
+	/* レスポンシブ[SmartPhone] */
+	@media screen and (max-width:767px) {
+		.sp-nav-btn{
+			display: none;
+		}
+
+		.-btn-active{
+			display: block;
+		}
+
+		.nav-wrap{
+			/* =======表示/非表示====== */
+			visibility: hidden;
+			opacity: 0;
+			/* =======レイアウト======= */
+			width: 100%;
+			height: 400px;
+			background-color:rgb(0, 0, 0);
+			position:absolute;
+			top: 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			/* ======アニメーション===== */
+			-webkit-transition: all 0.2s ease-in;
+			-moz-transition: all 0.2s ease-in;
+			-o-transition: all 0.2s ease-in;
+			transition: all 0.2s ease-in;
+		}
+
+		.-modal-active{
+			/* =======表示/非表示====== */
+			visibility: visible;
+			opacity: 0.8;
+		}
+
+		.nav-list{
+			color: white;
+			font-size: 24px;
+		}
+
+		.nav-item:nth-child(n+2){
+			padding-top: 50px;
+		}
+	}
+
+/* --------------------------- */
+/*            メイン            */
+/* --------------------------- */
+
+.profile-wrap{
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	margin-left: 10%;
+	margin-right: 10%;
+	/* アニメーション用 */
+	transition: 1s;
+	transform: translateY(50px);
+    opacity: 0;
+}
+
+.profile-wrap.is-active{
+	transition: 1s;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.profile-img{
+	width: 150px;
+	border-radius: 75px;
+	box-shadow: #333 2px 3px 15px;
+}
+
+.profile-text{
+	text-align: left;
+	margin-left: 40px;
+}
+
+.name{
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.name span{
+	font-family: 'Rationale', sans-serif;
+	font-weight: bold;
+}
+
+.introduction{
+	margin-top: 10px;
+}
+
+.skill-list{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.skill-item{
+	transition: 1s;
+	transform:translate(150px,150px) rotate(-15deg);
+    opacity: 0;
+}
+
+.skill-item.is-active{
+	transition: 1s;
+	transform:translate(0,0) rotate(0);
+    opacity: 1;
+}
+.skill-icon{
+	width: 500px;
+	height: 200px;
+	border-radius: 10px;
+	box-shadow: #333 2px 3px 15px;
+	display: flex;
+	align-items:flex-start;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+
+.skill-img{
+	width: 160px;
+	border-radius: 10px;
+}
+
+.skill-text-title{
+	font-family: 'Rationale', sans-serif;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.skill-detail{
+	text-align: left;
+	padding-left: 20px;
+}
+
+.wrapper{
+	margin-left: 10%;
+	margin-right: 10%;
+
+	transition: 1s;
+	transform:translateY(50px);
+    opacity: 0;
+}
+
+.wrapper.is-active{
+	transition: 1s;
+	transform:translateY(0);
+    opacity: 1;
+}
+/*tabの形状*/
+.tab{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 10px;
+}
+.tab li a{
+	display: block;
+	background:rgb(199, 199, 199);
+	margin:0 2px;
+	padding:10px 20px;
+	box-shadow: #333 2px 3px 15px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a{
+	background-color:rgb(230, 230, 230);
+	position: relative;
+}
+
+.tab li.active a::after{
+	content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    top: 70%;
+    left: 0;
+    /*線の形状*/
+    width: 100%;
+    height: 40px;
+	z-index: 999;
+	background-color:rgb(230, 230, 230);
+}
+
+
+/*エリアの表示非表示と形状*/
+.area {
+	display: none;/*はじめは非表示*/
+	opacity: 0;/*透過0*/
+	padding:50px 20px;
+}
+
+/*areaにis-activeというクラスがついた時の形状*/
+.area.is-active {
+	display: block;/*表示*/
+	animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	border-radius: 10px;
+	box-shadow: #333 2px 3px 15px;
+	height: 300px;
+	position: relative;
+}
+.area.is-active::after{
+	content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*線の形状*/
+    width: 100%;
+    height: 40px;
+	z-index: 999;
+	background-color:rgb(230, 230, 230);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+@keyframes displayAnime{
+	from {
+	opacity: 1;
+	}
+	to {
+	opacity: 1;
+	}
+}
+
+.works-list{
+	display: flex;
+	justify-content: center;
+}
+
+.contact-text{
+	margin-bottom: 20px;
+}
+
+.fa-envelope{
+	font-size: 40px;
+}
+
+.e-mail{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.e-mail:hover{
+	color:rgb(120, 120, 220);
+}
+
+.address{
+	margin-left: 10px;
+}
+
+.sns-list{
+	display: flex;
+	justify-content: center;
+}
+.sns-list.left{
+	justify-content:left;
+	margin-top: 10px;
+}
+
+.sns-icon{
+	font-size: 40px;
+	text-shadow: rgb(120, 120, 120) 2px 3px 3px;
+	margin-left: 20px;
+	margin-right: 20px;
+	position: relative;
+}
+
+.sns-icon:hover{
+	color:rgb(120, 120, 220);
+}
+
+.sns-icon:nth-child(n+2)::after{
+	content: 'Coming Soon';
+	font-size: 16px;
+	font-family:'Rationale', sans-serif;
+	color: white;
+	padding-top:8px;
+	text-align: center;
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    top: 20%;
+    left: -30px;
+    /*線の形状*/
+    width: 100px;
+    height: 40px;
+    background:rgb(94, 94, 94);
+	opacity: 0.8;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center;/*中央基点*/
+}
+
+.sns-icon:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+
+/* --------------------------- */
+/*           フッター           */
+/* --------------------------- */
+footer{
+	background-image: url(../img/top_img02.jpg);
+	background-size: cover;
+	background-position:bottom;
+	margin-top: 50px;
+	color: white;
+}
+.footer-list{
+	display: flex;
+	justify-content: center;
+	padding-top: 50px;
+	padding-bottom: 20px;
+	font-family: 'Rationale', sans-serif;
+	font-weight: bold;
+}
+
+.footer-item{
+	position: relative;
+}
+
+.footer-item:hover{
+	color: rgb(120, 120, 220);
+}
+
+.footer-item:nth-child(n+2){
+	margin-left: 40px;
+}
+
+.footer-item::after{
+	content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    top: 110%;
+    left: 0;
+    /*線の形状*/
+    width: 100%;
+    height: 2px;
+    background:rgb(120, 120, 220);
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: left top;/*左上基点*/
+}
+
+.footer-item:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+.copyright{
+	padding-bottom: 50px;
+	font-size: 14px;
+}
+
+/*========= ページトップのためのCSS ===============*/
+/*リンクの形状*/
+#page-top a{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	background-color: rgb(121, 121, 121);
+	box-shadow: #333 2px 3px 15px;
+	opacity: 0.9;
+	border-radius: 30px;
+	width: 60px;
+	height: 60px;
+	color: #fff;
+	text-align: center;
+	transition:all 0.3s;
+}
+
+#page-top a:hover{
+	background-color: rgb(204, 204, 204);
+}
+/*リンクを右下に固定*/
+#page-top {
+	position: fixed;
+	right: 10px;
+	z-index: 2;
+    /*はじめは非表示*/
+	opacity: 0;
+	transform: translateY(100px);
+	font-family: 'Rationale', sans-serif;
+}
+
+/*　上に上がる動き　*/
+
+#page-top.UpMove{
+	animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime{
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/*　下に下がる動き　*/
+
+#page-top.DownMove{
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+	from {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(100px);
+	}
+}
+
+/*========= スクロール ===============*/
+/*リンクの形状*/
+#scroll{
+	position: absolute;top:400px;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	font-family: 'Rationale', sans-serif;
+	color: white;
+	text-align: center;
+}
+#scroll a{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	background-color: rgb(121, 121, 121);
+	box-shadow: #333 2px 3px 15px;
+	opacity: 0.8;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	color: #fff;
+	transition:all 0.3s;
+
+}
+

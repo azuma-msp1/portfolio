@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Azuma's Portfolio</title>
+	<link rel="stylesheet" href="./css/reset.css">		<!--リセットCSS読み込み-->
+	<link rel="stylesheet" href="./css/style.css">		<!--CSSファイル読み込み-->
+	<!-- Googleフォント読み込み -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rationale&family=Shippori+Mincho&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- ====================ローディング画面==================== -->
+	<div id="splash">
+		<div id="splash_text"></div>
+		<div class="loader_cover loader_cover-up"></div><!--上に上がるエリア-->
+		<div class="loader_cover loader_cover-down"></div><!--下に下がるエリア-->
+		<!--/splash--></div>
+
+	<!-- ====================ヘッダー==================== -->
+	<header>
+		<div class="header-black"></div>
+		<h1 class="header-title"><a href="#">Azuma's Portfolio</a></h1>
+		<nav>
+			<ul class="nav-list">
+				<li class="nav-item"><a href="javascript:void(0)" class="profile">Profile</a></li>
+				<li class="nav-item"><a href="javascript:void(0)" class="skills">Skills</a></li>
+				<li class="nav-item"><a href="javascript:void(0)" class="works">Works</a></li>
+				<li class="nav-item"><a href="javascript:void(0)" class="contact">Contact</a></li>
+			</ul>
+		</nav>
+
+		<!-- ヘッダー レスポンシブ対応 -->
+		<div class="sp-nav-btn -btn-active">
+			<a href="javascript:void(0)"><i class="fas fa-bars"></i></a>
+		</div>
+		<div class="sp-nav-btn">
+			<a href="javascript:void(0)"><i class="fas fa-times"></i></a>
+		</div>
+	</header>
+
+	<!-- ==================== メイン ==================== -->
+	<main>
+
+		<section class="profile-section">
+			<!-- セクションタイトル -->
+			<div class="section-title-wrap">
+				<h2 class="section-title">Profile<span>　― 自己紹介 ―</span></h2>
+			</div>
+			<!-- 自己紹介 -->
+			<div class="profile-wrap js-scroll-trigger">
+				<img src="./img/profile_img01.png" alt="" class="profile-img">
+				<div class="profile-text">
+					<p class="name">東 政彦 <span>Masahiko Azuma</span></p>
+					<p class="introduction">はじめまして。Web制作でフリーランスをしております東 政彦と申します。<br>クライアント様のご要望を形にしたい。そんな思いでWeb制作に取り組んでおります。<br>納期や仕様などのニーズに、丁寧かつ的確にお応えすることを心掛けておりますので、是非お気軽にご相談ください。</p>
+					<ul class="sns-list left">
+						<li class="sns-icon"><a href="https://twitter.com/azuma_msp1" target="_blank" rel="noopener noreferrer" class="twitter"><i class="fab fa-twitter"></i></a></li><!--target="_blank"別タブで開く. rel="noopener noreferrer"脆弱性対策(target_blank指定時)-->
+						<li class="sns-icon"><a href="javascript:void(0)" class="facebook"><i class="fab fa-facebook"></i></a></li>
+						<li class="sns-icon"><a href="javascript:void(0)" class="instagram"><i class="fab fa-instagram"></i></a></li>
+						<li class="sns-icon"><a href="javascript:void(0)" class="line"><i class="fab fa-line"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section class="skills-section">
+			<!-- セクションタイトル -->
+			<div class="section-title-wrap">
+				<h2 class="section-title">Skills<span>　― 技術 ―</span></h2>
+			</div>
+
+			<h3>スキル一覧</h3>
+				<ul class="skill-list">
+					<li class="skill-item js-scroll-trigger">
+						<div class="skill-icon">
+							<img src="./img/skill_icon01.png" alt="" class="skill-img">
+							<div class="skill-text"><p class="skill-text-title">HTML・CSS</p>
+								<p class="skill-detail">SEOを意識したコーディングをします。レスポンシブ対応します。</p>
+							</div>
+						</div>
+					</li>
+
+					<li class="skill-item js-scroll-trigger">
+						<div class="skill-icon">
+							<img src="./img/skill_icon02.png" alt="" class="skill-img">
+							<div class="skill-text"><p class="skill-text-title">JavaScript・jQuery</p>
+								<p class="skill-detail">SEOを意識したコーディングをします。レスポンシブ対応します。</p>
+							</div>
+						</div>
+					</li>
+
+					<li class="skill-item js-scroll-trigger">
+						<div class="skill-icon"><img src="./img/skill_icon05.png" alt="" class="skill-img"></div>
+					</li>
+					<li class="skill-item js-scroll-trigger">
+						<div class="skill-icon"><img src="./img/skill_icon06.png" alt="" class="skill-img"></div>
+					</li>
+					<li class="skill-item js-scroll-trigger">
+						<div class="skill-icon"><img src="./img/skill_icon07.png" alt="" class="skill-img"></div>
+					</li>
+				</ul>
+
+			<h3>制作例</h3>
+		</section>
+
+		<section class="works-section">
+			<!-- セクションタイトル -->
+			<div class="section-title-wrap">
+				<h2 class="section-title">Works<span>　― 制作サイト ―</span></h2>
+			</div>
+
+			<div class="wrapper js-scroll-trigger">
+				<ul class="tab">
+					<li><a href="#sample">サンプル</a></li>
+					<li><a href="#works">制作実績</a></li>
+				</ul>
+
+				<div id="sample" class="area">
+					<ul class="works-list">
+						<li class="works-item">
+							<a href="#"><img src="#" alt="" class="works-icon"></a>
+							<p class="works-detail">
+								テーマ：架空の温泉旅館<br>
+								使用言語：HTML / CSS / JavaScript / jQuery<br>
+								制作期間：X時間(X日)
+							</p>
+						</li>
+						<li class="works-item">
+							<a href="#"><img src="#" alt="" class="works-icon"></a>
+							<p class="works-detail">
+								テーマ：架空のレストラン<br>
+								使用言語：HTML / CSS / JavaScript / jQuery<br>
+								制作期間：X時間(X日)
+							</p>
+						</li>
+					</ul>
+				</div>
+
+				<div id="works" class="area">
+					<p>Coming Soon</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="contact-section">
+			<!-- セクションタイトル -->
+			<div class="section-title-wrap">
+				<h2 class="section-title">Contact<span>　― お問い合わせ ―</span></h2>
+			</div>
+
+			<div class="contact-text">
+				<p>Web制作のご用命、ご相談については、以下のメールアドレスまでご連絡ください。</p>
+			</div>
+
+			<a href="mailto:azuma_msp1&#64;gmail.com" class="e-mail"><i class="far fa-envelope"></i><p class="address">E-mail: azuma_msp1@gmail.com</p></a>
+			<!--メーラー起動"mailto:". @書き換え"&#64;"(迷惑メール対策)-->
+
+
+			<ul class="sns-list">
+				<li class="sns-icon"><a href="https://twitter.com/azuma_msp1" target="_blank" rel="noopener noreferrer" class="twitter"><i class="fab fa-twitter"></i></a></li><!--target="_blank"別タブで開く. rel="noopener noreferrer"脆弱性対策(target_blank指定時)-->
+				<li class="sns-icon"><a href="javascript:void(0)" class="facebook"><i class="fab fa-facebook"></i></a></li>
+				<li class="sns-icon"><a href="javascript:void(0)" class="instagram"><i class="fab fa-instagram"></i></a></li>
+				<li class="sns-icon"><a href="javascript:void(0)" class="line"><i class="fab fa-line"></i></a></li>
+			</ul>
+		</section>
+
+
+	</main>
+
+	<!-- ====================フッター==================== -->
+	<footer id="footer">
+		<ul class="footer-list">
+			<li class="footer-item"><a href="javascript:void(0)" class="profile">Profile</a></li>
+			<li class="footer-item"><a href="javascript:void(0)" class="skills">Skills</a></li>
+			<li class="footer-item"><a href="javascript:void(0)" class="works">Works</a></li>
+			<li class="footer-item"><a href="javascript:void(0)" class="contact">Contact</a></li>
+		</ul>
+		<div class="copyright">Copyright (c) 2021 Azuma's Portfolio All Rights Reserved.</div>
+	</footer>
+
+	<!-- ===============アニメーション要素================ -->
+	<p id="page-top"><a href="#"><i class="fas fa-chevron-up"></i></a>PAGE TOP</p>
+
+	<p id="scroll"><a href="#"><i class="fas fa-chevron-down"></i></i></a>SCROLL</p>
+
+	<!-- ===============JavaScript読み込み=============== -->
+
+		<!--jQuery読み込み ※自分の作成した.jsファイルより前-->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<!-- ProgressBar読み込み -->
+		<script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+		<!--FontAwesome読み込み-->
+		<script src="https://kit.fontawesome.com/c076d91e30.js" crossorigin="anonymous"></script>
+		<!--JavaScriptファイル読み込み-->
+		<script src="./js/script.js"></script>
+
+</body>
+</html>
