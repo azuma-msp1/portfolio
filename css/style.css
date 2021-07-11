@@ -117,7 +117,7 @@ h1{
 	}
 	@media screen and (max-width:560px) {
 		h1{
-			font-size: 36px;
+			font-size: 32px;
 		}
 	}
 
@@ -365,7 +365,7 @@ h1{
 }
 .skill-icon{
 	max-width: 500px;
-	height: 200px;
+	min-height: 200px;
 	border-radius: 10px;
 	box-shadow: #333 2px 3px 15px;
 	display: flex;
@@ -500,6 +500,13 @@ h1{
 	background-size: 120%;
 	filter: grayscale(0);
 }
+
+@media screen and (max-width:560px) {
+	.works-backGroundImage{
+		transform: scale(0.8);
+	}
+}
+
 
 .works-item:nth-child(2) a{
 	position: relative;

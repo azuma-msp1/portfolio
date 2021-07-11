@@ -179,11 +179,11 @@ $(function () {
                 windowHeight = $(window).height();
 				 //$(window).height()ではウィンドウの高さを取得し、格納しています。
 
-                if (scroll > position - windowHeight +200) {
+                if (scroll > position - windowHeight +100) {
                     $(this).addClass('is-active');
                 }
 
-				if (scroll < position - windowHeight +200) {
+				if (scroll < position - windowHeight +100) {
                     $(this).removeClass('is-active');
                 }
             });
