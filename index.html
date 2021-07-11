@@ -11,6 +11,8 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Rationale&family=Shippori+Mincho&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/slick-theme.css"/>
 </head>
 <body>
 	<!-- ====================ローディング画面==================== -->
@@ -33,13 +35,31 @@
 			</ul>
 		</nav>
 
-		<!-- ヘッダー レスポンシブ対応 -->
-		<div class="sp-nav-btn -btn-active">
-			<a href="javascript:void(0)"><i class="fas fa-bars"></i></a>
+		<div class="sample-slider">
+			<ul class="sample-letter-wrapper">
+				<li class="sample-letter">S</li>
+				<li class="sample-letter">a</li>
+				<li class="sample-letter">m</li>
+				<li class="sample-letter">p</li>
+				<li class="sample-letter">l</li>
+				<li class="sample-letter">e</li>
+			</ul>
+			<p class="sample-text">Webサイト制作のサンプルはこちら</p>
+			<p class="sample-arrow"><i class="fas fa-chevron-down"></i></p>
+			<ul class="sample-list">
+				<li class="sample-item">
+					<a href="#" class="sample-link"><img src="./img/sample01.jpg" alt="" class="sample-icon"><div class="sample-icon-detail">サンプル01<br>Azuma's Portfolio<br>(当Webサイト)</div></a>
+				</li>
+				<li class="sample-item">
+					<a href="javascript:void(0)" class="sample-link"><img src="./img/sample02.jpg" alt="" class="sample-icon"></a>
+					<div class="comingSoon">Coming Soon</div>
+				</li>
+				<li class="sample-item">
+					<a href="https://azuma-msp1.github.io/hamster-moving/" target="_blank" rel="noopener noreferrer" class="sample-link"><img src="./img/sample03.jpg" alt="" class="sample-icon"><div class="sample-icon-detail">サンプル03<br>架空の引越業者<br>(外部リンク)</div></a><!--target="_blank"別タブで開く. rel="noopener noreferrer"脆弱性対策(target_blank指定時)-->
+				</li>
+			</ul>
 		</div>
-		<div class="sp-nav-btn">
-			<a href="javascript:void(0)"><i class="fas fa-times"></i></a>
-		</div>
+
 	</header>
 
 	<!-- ==================== メイン ==================== -->
@@ -52,7 +72,7 @@
 			</div>
 			<!-- 自己紹介 -->
 			<div class="profile-wrap js-scroll-trigger">
-				<img src="./img/profile_img01.png" alt="" class="profile-img">
+				<img src="./img/profile.jpg" alt="" class="profile-img">
 				<div class="profile-text">
 					<p class="name">東 政彦 <span>Masahiko Azuma</span></p>
 					<p class="introduction">はじめまして。Web制作でフリーランスをしております東 政彦と申します。<br>クライアント様のご要望を形にしたい。そんな思いでWeb制作に取り組んでおります。<br>納期や仕様などのニーズに、丁寧かつ的確にお応えすることを心掛けておりますので、是非お気軽にご相談ください。</p>
@@ -77,8 +97,8 @@
 					<li class="skill-item js-scroll-trigger">
 						<div class="skill-icon">
 							<img src="./img/skill_icon01.png" alt="" class="skill-img">
-							<div class="skill-text"><p class="skill-text-title">HTML・CSS</p>
-								<p class="skill-detail">SEOを意識したコーディングをします。レスポンシブ対応します。</p>
+							<div class="skill-text"><p class="skill-text-title">HTML / CSS</p>
+								<p class="skill-detail">ご要望のデザインを反映しつつ、SEOやアクセシビリティなどに配慮したコード設計を心掛けます。レスポンシブデザインに対応した、利便性の高いWebサイト制作のお手伝いをいたします。</p>
 							</div>
 						</div>
 					</li>
@@ -86,24 +106,33 @@
 					<li class="skill-item js-scroll-trigger">
 						<div class="skill-icon">
 							<img src="./img/skill_icon02.png" alt="" class="skill-img">
-							<div class="skill-text"><p class="skill-text-title">JavaScript・jQuery</p>
-								<p class="skill-detail">SEOを意識したコーディングをします。レスポンシブ対応します。</p>
+							<div class="skill-text"><p class="skill-text-title">JavaScript / jQuery</p>
+								<p class="skill-detail">アニメーションを活用し、サイト訪問者にとって重要な情報の見つけやすく、さらに情報を見たいと思って頂けるようなWebサイトの効果的な演出に注力いたします。</p>
 							</div>
 						</div>
 					</li>
 
 					<li class="skill-item js-scroll-trigger">
-						<div class="skill-icon"><img src="./img/skill_icon05.png" alt="" class="skill-img"></div>
+						<div class="skill-icon">
+							<img src="./img/skill_icon03.png" alt="" class="skill-img">
+							<div class="skill-text"><p class="skill-text-title">PHP / WordPress</p>
+								<p class="skill-detail">既存のWebサイトのWordPress移行をお手伝いいたします。</p>
+							</div>
+						</div>
 					</li>
+
 					<li class="skill-item js-scroll-trigger">
-						<div class="skill-icon"><img src="./img/skill_icon06.png" alt="" class="skill-img"></div>
+						<div class="skill-icon">
+							<img src="./img/skill_icon04.png" alt="" class="skill-img">
+							<div class="skill-text"><p class="skill-text-title">L step</p>
+								<p class="skill-detail">公式LINEアカウントの導入から、Lステップを活用した機能追加による効果的なマーケティング活動をサポートいたします。</p>
+							</div>
+						</div>
 					</li>
-					<li class="skill-item js-scroll-trigger">
-						<div class="skill-icon"><img src="./img/skill_icon07.png" alt="" class="skill-img"></div>
-					</li>
+
 				</ul>
 
-			<h3>制作例</h3>
+			<!-- <h3>制作例</h3> -->
 		</section>
 
 		<section class="works-section">
@@ -121,19 +150,27 @@
 				<div id="sample" class="area">
 					<ul class="works-list">
 						<li class="works-item">
-							<a href="#"><img src="#" alt="" class="works-icon"></a>
+							<a href="#" class="works-backGroundImage"></a>
 							<p class="works-detail">
-								テーマ：架空の温泉旅館<br>
-								使用言語：HTML / CSS / JavaScript / jQuery<br>
-								制作期間：X時間(X日)
+								【タイトル】Azuma's Portfolio(このWebサイト)<br>
+								【Skills】HTML / CSS / JavaScript / jQuery<br>
+								【制作期間(目安)】3～4日
 							</p>
 						</li>
 						<li class="works-item">
-							<a href="#"><img src="#" alt="" class="works-icon"></a>
+							<a href="javascript:void(0)" class="works-backGroundImage"></a>
 							<p class="works-detail">
-								テーマ：架空のレストラン<br>
-								使用言語：HTML / CSS / JavaScript / jQuery<br>
-								制作期間：X時間(X日)
+								【タイトル】Cafe KOGANEI(架空のカフェ)<br>
+								【Skills】HTML / CSS / JavaScript / jQuery<br>
+								【制作期間(目安)】3～4日
+							</p>
+						</li>
+						<li class="works-item">
+							<a href="https://azuma-msp1.github.io/hamster-moving/" target="_blank" rel="noopener noreferrer" class="works-backGroundImage"></a><!--target="_blank"別タブで開く. rel="noopener noreferrer"脆弱性対策(target_blank指定時)-->
+							<p class="works-detail">
+								【タイトル】引越のハムスター(架空の引越業者)<br>
+								【Skills】HTML / CSS / JavaScript / jQuery<br>
+								【制作期間(目安)】3～4日
 							</p>
 						</li>
 					</ul>
@@ -155,9 +192,9 @@
 				<p>Web制作のご用命、ご相談については、以下のメールアドレスまでご連絡ください。</p>
 			</div>
 
-			<a href="mailto:azuma_msp1&#64;gmail.com" class="e-mail"><i class="far fa-envelope"></i><p class="address">E-mail: azuma_msp1@gmail.com</p></a>
+			<a href="mailto:azuma.XXXX(仮)&#64;gmail.com" class="e-mail"><i class="far fa-envelope"></i><p class="address">E-mail: azuma.XXXX(仮)@gmail.com</p></a>
 			<!--メーラー起動"mailto:". @書き換え"&#64;"(迷惑メール対策)-->
-
+			<p class="tentative-caution">※現在掲載しているメールアドレスは仮です。上記アドレスは送信不可ですのでご注意下さいますようお願い申し上げます。</p>
 
 			<ul class="sns-list">
 				<li class="sns-icon"><a href="https://twitter.com/azuma_msp1" target="_blank" rel="noopener noreferrer" class="twitter"><i class="fab fa-twitter"></i></a></li><!--target="_blank"別タブで開く. rel="noopener noreferrer"脆弱性対策(target_blank指定時)-->
@@ -184,7 +221,7 @@
 	<!-- ===============アニメーション要素================ -->
 	<p id="page-top"><a href="#"><i class="fas fa-chevron-up"></i></a>PAGE TOP</p>
 
-	<p id="scroll"><a href="#"><i class="fas fa-chevron-down"></i></i></a>SCROLL</p>
+	<p id="scroll"><a href="#"><i class="fas fa-chevron-down"></i></a>SCROLL</p>
 
 	<!-- ===============JavaScript読み込み=============== -->
 
@@ -192,6 +229,8 @@
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 		<!-- ProgressBar読み込み -->
 		<script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+		<!--slick読み込み ※jQueryより後-->
+		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 		<!--FontAwesome読み込み-->
 		<script src="https://kit.fontawesome.com/c076d91e30.js" crossorigin="anonymous"></script>
 		<!--JavaScriptファイル読み込み-->

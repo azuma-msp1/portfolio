@@ -92,14 +92,13 @@ header{
 	background-image: url(../img/top_img01.jpg);
 	background-size: cover;
 	background-position:center;
-	height: 800px;
+	height: 100vh;/*vh=viewport height;ビューポートの高さに対する割合*/
 }
 
 .header-black{
 	height: 150px;
-	background-color: #000;
-	background: linear-gradient(black,white opacity 0.5);
-	opacity: 0.5;
+	background: linear-gradient(black,transparent);
+	opacity: 0.9;
 }
 
 h1{
@@ -107,25 +106,39 @@ h1{
 	font-weight: bold;
 	font-family: 'Rationale', sans-serif;
 	color: #fff;
+	/*position:absolute;left:50%;, transform:translateX(-50%)で中央寄せ*/
 	position: absolute;top: 20px;left: 50%;
 	transform: translateX(-50%);
 }
+	@media screen and (max-width:960px) {
+		h1{
+			font-size: 40px;
+		}
+	}
+	@media screen and (max-width:560px) {
+		h1{
+			font-size: 36px;
+		}
+	}
 
-.sp-nav-btn{
-	margin-left: auto;
-	margin-right: 40px;
-	font-size: 48px;
-	display: none;
+.nav-list{
+	display: flex;
+	justify-content: center;
+	position: absolute;top: 100px;left: 50%;
+	transform: translateX(-50%);
 }
 
 .nav-item{
 	position: relative;
 	font-family: 'Rationale', sans-serif;
 	color: #fff;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 .nav-item:hover{
 	color: rgb(120, 120, 220);
+	text-shadow: #000 0 0 20px;
 }
 
 .nav-item::after{
@@ -148,65 +161,135 @@ h1{
     transform: scale(1, 1);/*X方向にスケール拡大*/
 }
 
-	/* レスポンシブ[PC] */
-	@media screen and (min-width:768px) {
-		.nav-list{
-			display: flex;
-			justify-content: center;
-			position: absolute;top: 100px;left: 50%;
-			transform: translateX(-50%);
-		}
+.sample-slider{
+	color: #fff;
+	font-family:  'Rationale', sans-serif;
+	margin-top: 50px;
+}
 
-		.nav-item:nth-child(n+2){
-			margin-left: 40px;
+.sample-letter-wrapper{
+	display: flex;
+	justify-content: center;
+}
+
+.sample-letter{
+	animation-name:letterAnime;/*Keyframeで指定する名前*/
+	animation-duration:3s;/*アニメーション1回あたりの時間*/
+	animation-timing-function:ease-in-out;/*アニメーション進行速度*/
+	animation-delay:0;/*アニメーション開始までの時間*/
+	animation-iteration-count:infinite;/*繰り返しの回数*/
+	animation-direction:normal;/*再生方向 normal;順方向、reverse;逆方向、alternative;順方向→逆方向、alternative-reverse;逆方向→順方向*/
+	animation-fill-mode:forwards;/*アニメーション終了後のスタイル none;スタイル指定なし、forwards;最後のキーフレームのスタイルを適用、backwards;最初のキーフレームのスタイルを適用*/
+	animation-play-state:running;/*running;再生、paused;停止*/
+}
+.sample-letter:nth-child(2){animation-delay:.2s;}
+.sample-letter:nth-child(3){animation-delay:.4s;}
+.sample-letter:nth-child(4){animation-delay:.6s;}
+.sample-letter:nth-child(5){animation-delay:.8s;}
+.sample-letter:nth-child(6){animation-delay:1.0s;}
+@keyframes letterAnime{
+	0% {
+		transform: translateY(0) rotateY(0);
+	}
+	20% {
+		transform: translateY(-10px) rotateY(360deg);
+	}
+	40% {
+		transform: translateY(0) rotateY(0);
+	}
+	100% {
+		transform: translateY(0) rotateY(0);
+	}
+}
+
+.sample-text{
+	font-family: 'Shippori Mincho', serif;
+	font-size: 12px;
+}
+
+.sample-arrow{
+	animation-name:arrowAnime;/*Keyframeで指定する名前*/
+	animation-duration:.8s;/*アニメーション1回あたりの時間*/
+	animation-timing-function:ease-in-out;/*アニメーション進行速度*/
+	animation-delay:0;/*アニメーション開始までの時間*/
+	animation-iteration-count:infinite;/*繰り返しの回数*/
+	animation-direction:alternate;/*再生方向 normal;順方向、reverse;逆方向、alternative;順方向→逆方向、alternative-reverse;逆方向→順方向*/
+	animation-fill-mode:forwards;/*アニメーション終了後のスタイル none;スタイル指定なし、forwards;最後のキーフレームのスタイルを適用、backwards;最初のキーフレームのスタイルを適用*/
+	animation-play-state:running;/*running;再生、paused;停止*/
+}
+@keyframes arrowAnime{
+	from {
+		opacity: 0.8;
+		transform: translateY(0);
+	}
+	to {
+		opacity: 0.2;
+		transform: translateY(10px) rotateY(180deg);
+	}
+}
+
+.sample-list{
+	margin: 0 auto;
+	width: 900px;
+}
+	@media screen and (max-width:960px) {
+		.sample-list{
+			margin: 0 5%;
+			width: 90%;
 		}
 	}
 
-	/* レスポンシブ[SmartPhone] */
-	@media screen and (max-width:767px) {
-		.sp-nav-btn{
-			display: none;
-		}
+.sample-item{
+	margin-left: 10px;
+	margin-right: 10px;
+	position: relative;
+}
+.sample-icon{
+	-webkit-box-reflect: below 5px -webkit-gradient(linear, left bottom, left top, from(#fff), color-stop(0.08, transparent),to(transparent));
+	border-radius: 5px;
+	border: #fff 1px solid;
 
-		.-btn-active{
-			display: block;
-		}
+}
 
-		.nav-wrap{
-			/* =======表示/非表示====== */
-			visibility: hidden;
-			opacity: 0;
-			/* =======レイアウト======= */
-			width: 100%;
-			height: 400px;
-			background-color:rgb(0, 0, 0);
-			position:absolute;
-			top: 100px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			/* ======アニメーション===== */
-			-webkit-transition: all 0.2s ease-in;
-			-moz-transition: all 0.2s ease-in;
-			-o-transition: all 0.2s ease-in;
-			transition: all 0.2s ease-in;
-		}
-
-		.-modal-active{
-			/* =======表示/非表示====== */
-			visibility: visible;
-			opacity: 0.8;
-		}
-
-		.nav-list{
-			color: white;
-			font-size: 24px;
-		}
-
-		.nav-item:nth-child(n+2){
-			padding-top: 50px;
-		}
+.slick-slide{
+	padding-top: 20px; /*中央スライドを拡大すると見切れるので調整*/
+	padding-bottom: 50px; /*中央スライドを拡大すると見切れるので調整*/
+	filter: grayscale(100%) blur(2px);
+}
+.slick-current{ /*スライダ―中央のサイズを拡大 ※.jsのcenterModeをtrueに*/
+	transform: scale(1.1);
+	z-index: 99;
+	position: relative; /* z-indexと組み合わせで中央スライドを最前面に*/
+	filter: grayscale(0%);
+}
+@media screen and (max-width:960px) {
+	.slick-slide{
+		padding-top: 10px;
+		padding-bottom: 30px;
 	}
+	.slick-current{
+		transform: scale(1);
+	}
+}
+
+.sample-icon-detail{
+	position: absolute;top:30%;left:0;
+	width: 100%;
+	background:#000;
+	opacity: 0;
+	font-family: 'Shippori Mincho', serif;
+}
+.sample-icon-detail:hover{
+	opacity: 0.6;
+}
+.comingSoon{
+	position: absolute;top:37%;
+	width: 100%;
+	height: 40px;
+	background:rgb(120, 120, 220);
+	padding-top: 8px;
+	opacity: .8;
+}
 
 /* --------------------------- */
 /*            メイン            */
@@ -231,9 +314,14 @@ h1{
 }
 
 .profile-img{
-	width: 150px;
-	border-radius: 75px;
+	max-width: 300px;
+	border-radius: 5px;
 	box-shadow: #333 2px 3px 15px;
+}
+@media screen and (max-width:560px) {
+	.profile-img{
+		display: none;
+	}
 }
 
 .profile-text{
@@ -264,17 +352,19 @@ h1{
 
 .skill-item{
 	transition: 1s;
-	transform:translate(150px,150px) rotate(-15deg);
+	transform: translateY(50px);
+	/* transform:translate(150px,150px) rotate(-15deg); */
     opacity: 0;
 }
 
 .skill-item.is-active{
 	transition: 1s;
-	transform:translate(0,0) rotate(0);
+	transform: translateY(0);
+	/* transform:translate(0,0) rotate(0); */
     opacity: 1;
 }
 .skill-icon{
-	width: 500px;
+	max-width: 500px;
 	height: 200px;
 	border-radius: 10px;
 	box-shadow: #333 2px 3px 15px;
@@ -293,18 +383,20 @@ h1{
 
 .skill-text-title{
 	font-family: 'Rationale', sans-serif;
-	font-size: 28px;
+	font-size: 24px;
 	font-weight: bold;
+	line-height: 1;
 }
 
 .skill-detail{
 	text-align: left;
 	padding-left: 20px;
+	font-size: 16px;
 }
 
 .wrapper{
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
 
 	transition: 1s;
 	transform:translateY(50px);
@@ -320,7 +412,7 @@ h1{
 .tab{
 	display: flex;
 	flex-wrap: wrap;
-	margin-left: 10px;
+	justify-content: center;
 }
 .tab li a{
 	display: block;
@@ -354,19 +446,15 @@ h1{
 /*エリアの表示非表示と形状*/
 .area {
 	display: none;/*はじめは非表示*/
-	opacity: 0;/*透過0*/
-	padding:50px 20px;
+	padding:50px 5px;
 }
 
 /*areaにis-activeというクラスがついた時の形状*/
 .area.is-active {
 	display: block;/*表示*/
-	animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
-	animation-duration: 2s;
-	animation-fill-mode: forwards;
 	border-radius: 10px;
 	box-shadow: #333 2px 3px 15px;
-	height: 300px;
+	height: auto;
 	position: relative;
 }
 .area.is-active::after{
@@ -384,22 +472,73 @@ h1{
 	border-top-right-radius: 10px;
 }
 
-@keyframes displayAnime{
-	from {
-	opacity: 1;
-	}
-	to {
-	opacity: 1;
-	}
-}
-
 .works-list{
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
+}
+.works-item{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.works-backGroundImage{
+	background-position: center;
+	background-size: contain;
+	display: block;
+	width: 400px;
+	height: 250px;
+	filter: grayscale(100%);
+	border-radius: 5px;
+	transition: all .5s ease-in-out;
+}
+.works-item:nth-child(1) .works-backGroundImage{background-image: url(../img/sample01.jpg);}
+.works-item:nth-child(2) .works-backGroundImage{background-image: url(../img/sample02.jpg);}
+.works-item:nth-child(3) .works-backGroundImage{background-image: url(../img/sample03.jpg);}
+.works-backGroundImage:hover{
+	background-size: 120%;
+	filter: grayscale(0);
+}
+
+.works-item:nth-child(2) a{
+	position: relative;
+}
+.works-item:nth-child(2) a::after{
+	content: 'Coming Soon';
+	font-size: 16px;
+	font-family:'Rationale', sans-serif;
+	color: white;
+	padding-top:8px;
+	text-align: center;
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    top: 105px;
+    left: 0;
+    /*線の形状*/
+    width: 100%;
+    height: 40px;
+    background:rgb(120, 120, 220);
+	opacity: 0.8;
+	z-index: 999;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center;/*中央基点*/
+}
+.works-item:nth-child(2) a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+.works-detail{
+	font-size: 16px;
+	flex: 1;
 }
 
 .contact-text{
 	margin-bottom: 20px;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
 .fa-envelope{
@@ -410,7 +549,7 @@ h1{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .e-mail:hover{
@@ -421,9 +560,17 @@ h1{
 	margin-left: 10px;
 }
 
+.tentative-caution{
+	color: red;
+	margin-bottom: 20px;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
 .sns-list{
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
 }
 .sns-list.left{
 	justify-content:left;
@@ -494,6 +641,7 @@ footer{
 
 .footer-item:hover{
 	color: rgb(120, 120, 220);
+	text-shadow: #000 0 0 20px;
 }
 
 .footer-item:nth-child(n+2){
@@ -548,7 +696,7 @@ footer{
 /*リンクを右下に固定*/
 #page-top {
 	position: fixed;
-	right: 10px;
+	right: 15px;
 	z-index: 2;
     /*はじめは非表示*/
 	opacity: 0;
@@ -591,12 +739,20 @@ footer{
 /*========= スクロール ===============*/
 /*リンクの形状*/
 #scroll{
-	position: absolute;top:400px;
-	margin-left: 50%;
-	transform: translateX(-50%);
+	position: absolute;top:80vh;/*vh=viewport height;ビューポートの高さに対する割合*/
+	left: 50%;
+	transform: translateX(-200%);
 	font-family: 'Rationale', sans-serif;
 	color: white;
 	text-align: center;
+	animation-name:scrollAnime;/*Keyframeで指定する名前*/
+	animation-duration:.8s;/*アニメーション1回あたりの時間*/
+	animation-timing-function:ease-in-out;/*アニメーション進行速度*/
+	animation-delay:0;/*アニメーション開始までの時間*/
+	animation-iteration-count:infinite;/*繰り返しの回数*/
+	animation-direction:alternate;/*再生方向 normal;順方向、reverse;逆方向、alternative;順方向→逆方向、alternative-reverse;逆方向→順方向*/
+	animation-fill-mode:forwards;/*アニメーション終了後のスタイル none;スタイル指定なし、forwards;最後のキーフレームのスタイルを適用、backwards;最初のキーフレームのスタイルを適用*/
+	animation-play-state:running;/*running;再生、paused;停止*/
 }
 #scroll a{
 	display: flex;
@@ -604,12 +760,19 @@ footer{
 	align-items:center;
 	background-color: rgb(121, 121, 121);
 	box-shadow: #333 2px 3px 15px;
-	opacity: 0.8;
 	border-radius: 50%;
 	width: 60px;
 	height: 60px;
 	color: #fff;
-	transition:all 0.3s;
-
+}
+@keyframes scrollAnime{
+	from {
+		opacity: 0.8;
+		transform: translateY(0) translateX(-50%);
+	}
+	to {
+		opacity: 0.2;
+		transform: translateY(30px) translateX(-50%);
+	}
 }
 

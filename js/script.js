@@ -74,7 +74,7 @@ PageTopAnime();/* スクロールした際の動きの関数を呼ぶ*/
 $('#page-top').click(function () {
 $('body,html').animate({
 	scrollTop: 0//ページトップまでスクロール
-}, 300);//ページトップスクロールの速さ。数字が大きいほど遅くなる
+}, 500);//ページトップスクロールの速さ。数字が大きいほど遅くなる
 return false;//リンク自体の無効化
 });
 
@@ -122,7 +122,7 @@ $('.profile').click(function(){
 
     $('body,html').animate({
 		scrollTop:position-30//ページトップまでスクロール。数値はページトップから下方向の位置
-	},300);//スクロールの速さ。数字が大きいほど遅くなる
+	},500);//スクロールの速さ。数字が大きいほど遅くなる
 	//return false;//リンク自体の無効化。これをしないとリンク先へ遷移<a ref="#"></a>⇒アニメーションなしでページTOP遷移 ⇒<a ref="javascript:void(0)">にすればreturn falseは不要
 });
 
@@ -133,7 +133,7 @@ $('.skills').click(function(){
 
     $('body,html').animate({
 		scrollTop:position-30//ページトップまでスクロール。数値はページトップから下方向の位置
-	},300);//スクロールの速さ。数字が大きいほど遅くなる
+	},500);//スクロールの速さ。数字が大きいほど遅くなる
 	//return false;//リンク自体の無効化。これをしないとリンク先へ遷移<a ref="#"></a>⇒アニメーションなしでページTOP遷移 ⇒<a ref="javascript:void(0)">にすればreturn falseは不要
 });
 
@@ -144,7 +144,7 @@ $('.works').click(function(){
 
     $('body,html').animate({
 		scrollTop:position-30//ページトップまでスクロール。数値はページトップから下方向の位置
-	},300);//スクロールの速さ。数字が大きいほど遅くなる
+	},500);//スクロールの速さ。数字が大きいほど遅くなる
 	//return false;//リンク自体の無効化。これをしないとリンク先へ遷移<a ref="#"></a>⇒アニメーションなしでページTOP遷移 ⇒<a ref="javascript:void(0)">にすればreturn falseは不要
 });
 
@@ -155,7 +155,7 @@ $('.contact').click(function(){
 
     $('body,html').animate({
 		scrollTop:position-30//ページトップまでスクロール。数値はページトップから下方向の位置
-	},300);//スクロールの速さ。数字が大きいほど遅くなる
+	},500);//スクロールの速さ。数字が大きいほど遅くなる
 	//return false;//リンク自体の無効化。これをしないとリンク先へ遷移<a ref="#"></a>⇒アニメーションなしでページTOP遷移 ⇒<a ref="javascript:void(0)">にすればreturn falseは不要
 });
 
@@ -193,3 +193,37 @@ $(function () {
 	//リロード時などに、is-activeクラスが外れてしまうのを防いでいます。
 
 });
+
+//スライダー
+$(function(){
+	$('.sample-list').slick({
+		autoplay:true,
+		autoplayspeed:100,
+		centerMode: true,
+		arrows: true,
+		centerPadding: '300px',
+		dots: true,
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1, //Prev, Nextボタンで何枚ずつスライドを切り替えるか
+		responsive: [
+		  {
+			breakpoint: 960,
+			settings: {
+			  slidesToShow: 1,
+			  slidesToScroll: 1,
+			  centerPadding: '30%',
+			}
+		  },
+		  {
+			breakpoint: 560,
+			settings: {
+			  slidesToShow: 1,
+			  slidesToScroll: 1,
+			  centerPadding: '50px',
+			}
+		  },
+		]
+	});
+});
+
