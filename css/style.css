@@ -117,7 +117,7 @@ h1{
 	}
 	@media screen and (max-width:560px) {
 		h1{
-			font-size: calc(26px + 2vw);
+			font-size: calc(20px + 2vw);
 		}
 	}
 
@@ -569,6 +569,12 @@ label{
 	text-align: left;
 	width: 150px;
 	display: inline-block;
+}
+@media screen and (max-width:560px) {
+	label{
+		text-align: center;
+		margin-top: 20px;
+	}
 }
 
 input, textarea{
