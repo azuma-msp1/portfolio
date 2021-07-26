@@ -13,6 +13,19 @@
 	<link href="https://fonts.googleapis.com/css2?family=Rationale&family=Shippori+Mincho&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="./css/slick-theme.css"/>
+		<!-- ===============JavaScript読み込み=============== -->
+
+		<!--jQuery読み込み ※自分の作成した.jsファイルより前-->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" defer="defer"></script>
+		<!-- ProgressBar読み込み -->
+		<script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js" defer="defer"></script>
+		<!--slick読み込み ※jQueryより後-->
+		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer="defer"></script>
+		<!--FontAwesome読み込み-->
+		<script src="https://kit.fontawesome.com/c076d91e30.js" crossorigin="anonymous" defer="defer"></script>
+		<!--JavaScriptファイル読み込み-->
+		<script src="./js/script.js" defer="defer"></script>
+
 </head>
 <body>
 	<!-- ====================ローディング画面==================== -->
@@ -189,8 +202,25 @@
 			</div>
 
 			<div class="contact-text">
-				<p>Web制作のご用命、ご相談については、以下のメールアドレスまでご連絡ください。</p>
+				<p>Web制作のご用命、ご相談については、以下のお問い合わせフォームまたはメールアドレスからご連絡ください。</p>
 			</div>
+
+			<form>
+				<div class="form-inner">
+					<label for="name">お名前</label>
+					<input type="text" id="name" name="name" placeholder="例）姓　名">
+				</div>
+				<div>
+					<label for="email">メールアドレス</label>
+					<input type="mail" id="email" name="email" placeholder="例）example@email.com">
+				</div>
+				<div>
+					<label for="message">内容</label>
+					<textarea id="message" name="message"></textarea>
+				</div>
+				<input type="submit" id="submit-button" value="送信">
+				<p class="tentative-caution">※現在掲載しているお問い合わせフォームは仮です。上記送信ボタンは送信不可ですのでご注意下さいますようお願い申し上げます。</p>
+			</form>
 
 			<a href="mailto:azuma.XXXX(仮)&#64;gmail.com" class="e-mail"><i class="far fa-envelope"></i><p class="address">E-mail: azuma.XXXX(仮)@gmail.com</p></a>
 			<!--メーラー起動"mailto:". @書き換え"&#64;"(迷惑メール対策)-->
@@ -223,18 +253,6 @@
 
 	<p id="scroll"><a href="#"><i class="fas fa-chevron-down"></i></a>SCROLL</p>
 
-	<!-- ===============JavaScript読み込み=============== -->
-
-		<!--jQuery読み込み ※自分の作成した.jsファイルより前-->
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-		<!-- ProgressBar読み込み -->
-		<script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
-		<!--slick読み込み ※jQueryより後-->
-		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-		<!--FontAwesome読み込み-->
-		<script src="https://kit.fontawesome.com/c076d91e30.js" crossorigin="anonymous"></script>
-		<!--JavaScriptファイル読み込み-->
-		<script src="./js/script.js"></script>
 
 </body>
 </html>

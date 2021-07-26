@@ -102,7 +102,7 @@ header{
 }
 
 h1{
-	font-size: 48px;
+	font-size: 52px;
 	font-weight: bold;
 	font-family: 'Rationale', sans-serif;
 	color: #fff;
@@ -112,12 +112,12 @@ h1{
 }
 	@media screen and (max-width:960px) {
 		h1{
-			font-size: 40px;
+			font-size: calc(32px + 2vw);/*vw:ビューポート横幅の1/100*/
 		}
 	}
 	@media screen and (max-width:560px) {
 		h1{
-			font-size: 32px;
+			font-size: calc(26px + 2vw);
 		}
 	}
 
@@ -328,6 +328,28 @@ h1{
 	text-align: left;
 	margin-left: 40px;
 }
+.sns-list.left{
+	justify-content:left;
+	margin-top: 10px;
+}
+@media screen and (max-width:560px) {
+	.profile-text{
+		margin-left: 0;
+	}
+}
+@media screen and (max-width:960px) {
+	.profile-wrap{
+		flex-wrap: wrap;
+	}
+	.profile-text{
+		margin-left: 0;
+		margin: 10px;
+	}
+	.sns-list.left{
+		margin-left: auto;
+		justify-content: center;
+	}
+}
 
 .name{
 	font-size: 24px;
@@ -416,7 +438,7 @@ h1{
 }
 .tab li a{
 	display: block;
-	background:rgb(199, 199, 199);
+	background:rgb(200, 200, 200);
 	margin:0 2px;
 	padding:10px 20px;
 	box-shadow: #333 2px 3px 15px;
@@ -491,7 +513,7 @@ h1{
 	height: 250px;
 	filter: grayscale(100%);
 	border-radius: 5px;
-	transition: all .5s ease-in-out;
+	transition: all .5s ease-out;
 }
 .works-item:nth-child(1) .works-backGroundImage{background-image: url(../img/sample01.jpg);}
 .works-item:nth-child(2) .works-backGroundImage{background-image: url(../img/sample02.jpg);}
@@ -504,6 +526,7 @@ h1{
 @media screen and (max-width:560px) {
 	.works-backGroundImage{
 		transform: scale(0.8);
+		filter: grayscale(0);
 	}
 }
 
@@ -542,6 +565,41 @@ h1{
 	flex: 1;
 }
 
+label{
+	text-align: left;
+	width: 150px;
+	display: inline-block;
+}
+
+input, textarea{
+	border:rgb(120, 120, 120) solid 1px;
+	border-radius: 5px;
+	box-shadow: #333 2px 3px 15px;
+	background-color: #fff;
+	text-align: left;
+	padding: 5px 10px;
+	margin: 5px;
+	color:rgb(120, 120, 120);
+	width: 400px;
+}
+
+#submit-button{
+	margin-top: 20px;
+	border-radius: 5px;
+	width: 200px;
+	height: 40px;
+	text-align: center;
+	background-color:rgb(200, 200, 200);
+	color: black;
+	transition: all .3s;
+}
+#submit-button:hover{
+	background-color:rgb(120, 120, 220);
+	color: #fff;
+    /*アニメーションの指定*/
+    transition: all .3s;
+}
+
 .contact-text{
 	margin-bottom: 20px;
 	margin-left: 5%;
@@ -557,6 +615,7 @@ h1{
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 10px;
+	margin-top: 30px;
 }
 
 .e-mail:hover{
@@ -579,10 +638,7 @@ h1{
 	justify-content: center;
 	flex-wrap: wrap;
 }
-.sns-list.left{
-	justify-content:left;
-	margin-top: 10px;
-}
+
 
 .sns-icon{
 	font-size: 40px;
@@ -610,7 +666,7 @@ h1{
     /*線の形状*/
     width: 100px;
     height: 40px;
-    background:rgb(94, 94, 94);
+    background:rgb(90,90,90);
 	opacity: 0.8;
     /*アニメーションの指定*/
     transition: all .3s;
@@ -686,7 +742,7 @@ footer{
 	display: flex;
 	justify-content:center;
 	align-items:center;
-	background-color: rgb(121, 121, 121);
+	background-color: rgb(120, 120, 120);
 	box-shadow: #333 2px 3px 15px;
 	opacity: 0.9;
 	border-radius: 30px;
@@ -698,7 +754,7 @@ footer{
 }
 
 #page-top a:hover{
-	background-color: rgb(204, 204, 204);
+	background-color: rgb(200, 200, 200);
 }
 /*リンクを右下に固定*/
 #page-top {
@@ -765,7 +821,7 @@ footer{
 	display: flex;
 	justify-content:center;
 	align-items:center;
-	background-color: rgb(121, 121, 121);
+	background-color: rgb(120, 120, 120);
 	box-shadow: #333 2px 3px 15px;
 	border-radius: 50%;
 	width: 60px;
