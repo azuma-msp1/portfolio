@@ -117,7 +117,7 @@ h1{
 	}
 	@media screen and (max-width:560px) {
 		h1{
-			font-size: calc(16px + 2vw);
+			font-size: calc(12px + 2vw);
 		}
 	}
 
@@ -401,6 +401,7 @@ h1{
 .skill-img{
 	width: 160px;
 	border-radius: 10px;
+	filter: drop-shadow(#333 2px 3px 5px);
 }
 
 .skill-text-title{
